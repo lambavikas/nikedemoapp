@@ -1,0 +1,4 @@
+BusinessPartnerID,CompanyName,WebAddress,EmailAddress,PhoneNumber
+LOCAL-01,Office Line Prag,http://www.office-line-prag.test.com,customer-info@officeline.test.com,+420 776 9487923
+LOCAL-02,Depot-4All,http://www.depot-4all.test.com,customer-info@depot4all.test.com,+49 7141 2463585
+LOCAL-03,ITeL-Office,http://www.itel-office.test.com,customer-info@iteloffice.test.com,+49 351 31915489
