@@ -14,5 +14,8 @@
   },
   "scripts": {
     "start": "cds run"
-  }
+  },
+  "sapux": [
+    "app/businesspartners"
+  ]
 }

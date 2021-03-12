@@ -4,7 +4,8 @@ This repository contains multiple branches where the master branch has the compl
 
 # Links to Sub-Documents In this Project
 1. [Installation](./docs/Installation.md)
-2. [Creating a  New Project](./docs/Service.md)
+2. [Creating a CAP based OData Service](./docs/Service.md)
+3. [Creating a Freestyle UI5 application to consume the OData Service](./docs/FreestyleUI.md)
 
 ## Learn More
 
