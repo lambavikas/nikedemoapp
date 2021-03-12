@@ -4,6 +4,7 @@ This repository contains multiple branches where the master branch has the compl
 
 # Links to Sub-Documents In this Project
 1. [Installation](./docs/Installation.md)
+2. [Creating a  New Project](./docs/Service.md)
 
 ## Learn More
 
