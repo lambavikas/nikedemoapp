@@ -17,5 +17,16 @@
   },
   "sapux": [
     "app/businesspartners"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "GWSAMPLE": {
+        "kind": "odata",
+        "model": "srv/external/GWSAMPLE",
+        "credentials": {
+          "destination": "cap-api098"
+        }
+      }
+    }
+  }
 }
