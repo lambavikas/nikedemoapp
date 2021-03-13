@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/test/Opa5","./arrangements/Startup","./NavigationJourney","sap/ui/test/opaQunit"],function(e,n){"use strict";e.extendConfig({arrangements:new n,viewNamespace:"ns.businesspartners.view."})});

@@ -7,6 +7,7 @@ This repository contains multiple branches where the master branch has the compl
 2. [Creating a CAP based OData Service](./docs/Service.md)
 3. [Creating a Freestyle UI5 application to consume the OData Service](./docs/FreestyleUI.md)
 4. [Consuming an External Service](./docs/ExternalService.md)
+5. [Deploying to Cloud Foundry](./docs/DeployToCF.md)
 
 ## Learn More
 

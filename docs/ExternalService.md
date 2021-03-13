@@ -115,13 +115,13 @@ If you have access to a S/4HANA system and a user with permission for the *Busin
             "credentials": {
                 "Type": "HTTP",
                 "XFSystemName": "ES5",
-                "User": "I034763",
+                "User": "<user>",
                 "Authentication": "BasicAuthentication",
                 "WebIDEEnabled": "true",
                 "ProxyType": "Internet",
                 "URL": "https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/gwsample_basic",
                 "Name": "ES5",
-                "Password": "np13ip13"
+                "Password": "<password>"
             },
             "syslog_drain_url": null,
             "volume_mounts": []

@@ -1,32 +1,38 @@
 {
-  "name": "nikedemoapp",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^4",
-    "express": "^4"
-  },
-  "devDependencies": {
-    "sqlite3": "5.0.0"
-  },
-  "scripts": {
-    "start": "cds run"
-  },
-  "sapux": [
-    "app/businesspartners"
-  ],
-  "cds": {
-    "requires": {
-      "GWSAMPLE": {
-        "kind": "odata",
-        "model": "srv/external/GWSAMPLE",
-        "credentials": {
-          "destination": "cap-api098"
+    "name": "nikedemoapp",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^4",
+        "@sap/xsenv": "^3.1.0",
+        "@sap/xssec": "^3.1.2",
+        "express": "^4"
+    },
+    "devDependencies": {
+        "sqlite3": "5.0.0"
+    },
+    "scripts": {
+        "start": "cds run"
+    },
+    "sapux": [
+        "app/businesspartners"
+    ],
+    "cds": {
+        "requires": {
+            "GWSAMPLE": {
+                "kind": "odata",
+                "model": "srv/external/GWSAMPLE",
+                "credentials": {
+                    "destination": "cap-api098"
+                }
+            }
+        },
+        "uaa": {
+            "kind": "xsuaa",
+            "credentials": {}
         }
-      }
     }
-  }
 }

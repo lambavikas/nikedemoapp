@@ -1,0 +1,95 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = nikedemoapp
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: nikedemoapp
+version: 1.0.0
+description: "A simple CAP project."
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: nikedemoapp-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   requires:
+      - name: nikedemoapp-uaa
+      - name: nikedemoapp-destination
+      - name: nikedemoapp-connectivity
+   provides:
+    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+ # -------------------- APP BUILDER MODULE --------------------
+ - name: nikedemoapp-app
+ # ------------------------------------------------------------
+   type: html5
+   path: app
+   build-parameters:
+     builder: custom
+     commands:
+      - bash build.sh
+     supported-platforms: []
+     build-result: dist
+# -------------------- APP-ROUTER DEPLOYER MODULE ------------
+ - name: nikedemoapp-approuter
+# ------------------------------------------------------------ 
+   type: nodejs
+   path: approuter
+   requires:
+     - name: nikedemoapp-uaa
+     - name: srv-api
+       group: destinations
+       properties:
+          forwardAuthToken: true
+          strictSSL: true
+          name: srv-api
+          url: '~{srv-url}'
+   build-parameters:
+     requires:
+       - name: nikedemoapp-app
+         artifacts:
+           - ./*
+         target-path: resources
+
+resources:
+# services extracted from CAP configuration
+# 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
+# ------------------------------------------------------------
+ - name: nikedemoapp-destination
+# ------------------------------------------------------------ 
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service: destination
+      service-plan: lite
+# ------------------------------------------------------------
+ - name: nikedemoapp-connectivity
+# ------------------------------------------------------------ 
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: connectivity
+     service-plan: lite
+# ------------------------------------------------------------
+ - name: nikedemoapp-uaa
+# ------------------------------------------------------------ 
+   type: org.cloudfoundry.managed-service
+   parameters:
+    service: xsuaa
+    service-plan: application
+    path: ./xs-security.json
+    config:
+      xsappname: 'nikedemoapp-uaa'
+
+
+
+

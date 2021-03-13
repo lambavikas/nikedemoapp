@@ -33,3 +33,6 @@ A node.js version 10 or higher is required to install the UI5 CLI. For more info
 - Cloud Foundry Command Line Interface (CF CLI): 
     - You can also find more detailed infos on the Cloud Foundry CLI installation [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
     - Follow this [tutorial](https://developers.sap.com/tutorials/cp-cf-download-cli.html#6726050d-8d1c-48cd-8ab7-d5ca2cca70f8) to configure your API endpoint
+- Install the MTA Build Tool mbt using `npm install -g mbt`
+- Install `make` tool that is required by `mbt`
+- Install the MultiApps Cloud Foundry CLI Plugin, required to deploy an MTA archive
